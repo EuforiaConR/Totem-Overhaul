@@ -21,7 +21,7 @@ TotemRegistry.register("totem_overhaul:breeze_totem", {
 
     const { location, dimension } = player;
     const radius = 5;
-    const strength = 4;
+    const strength = 2;
 
     const entities = dimension.getEntities({
       location: location,
@@ -43,8 +43,8 @@ TotemRegistry.register("totem_overhaul:breeze_totem", {
       const nx = dx / distance;
       const nz = dz / distance;
 
-
-      entity.applyKnockback({ x: nx * strength, z: nz * strength }, 0.5);
+      entity.applyImpulse({ x: nx * strength, y: 0.75, z: nz * strength })
+      //entity.applyKnockback({ x: nx * strength, z: nz * strength }, 0.5);
     }
     player.playSound("breeze_wind_charge.burst")
 
