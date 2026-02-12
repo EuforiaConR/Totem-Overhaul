@@ -1,0 +1,44 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Euforia, Geokiller"
+		]
+	},
+	"header": {
+		"name": "Totem Overhaul",
+		"description": "",
+		"min_engine_version": [
+			1,
+			26,
+			0
+		],
+		"uuid": "9e99fd7f-04b2-4c96-b5ed-2bc17b239591",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "92481f11-79a9-47b6-8f88-23d0dfc02a5f",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "548e8314-d00c-443d-ada3-5dd695026a74",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}
