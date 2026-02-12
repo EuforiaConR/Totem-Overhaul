@@ -101,20 +101,6 @@ world.beforeEvents.entityHurt.subscribe((ev) => {
       );
     });
   });
-
-  const ctx = {
-    player: hurtEntity,
-    damageSource,
-    damage,
-    slot,
-  };
-  if (totem.onActivate) {
-    totem.onActivate(ctx);
-  }
-  system.run(() => {
-    hurtEntity.playSound(totem.soundId ?? DEFAULT_SOUND_ID);
-    hurtEntity.spawnParticle(totem.particleId ?? DEFAULT_PARTICLE_ID, hurtEntity.getHeadLocation());
-  });
 });
 
 system.runInterval(() => {
