@@ -23,6 +23,7 @@ TotemRegistry.register("geo:golem_totem", {
     player.addEffect("resistance", 80, { amplifier: 3 });
     player.addEffect("slowness", 80, { amplifier: 4 });
 
-    player.dimension.spawnEntity("minecraft:iron_golem", player.location);
-    },
+    let golem = player.dimension.spawnEntity("minecraft:iron_golem", player.location)
+    golem.triggerEvent("minecraft:from_player");
+  },
 });
