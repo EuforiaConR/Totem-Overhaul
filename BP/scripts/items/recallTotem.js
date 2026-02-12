@@ -11,6 +11,7 @@ import { Player, EntityDamageSource, world } from "@minecraft/server";
 
 TotemRegistry.register("geo:recall_totem", {
     soundId: "null",
+    color: { red: 0.6, green: 0.6, blue: 1 },
   /**
    * @param {TotemContext} ctx
    */
