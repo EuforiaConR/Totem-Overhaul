@@ -9,25 +9,20 @@ import { Player, EntityDamageSource, world } from "@minecraft/server";
  * @property {string} slot
  */
 
-TotemRegistry.register("geo:recall_totem", {
-    soundId: "null",
-    color: { red: 0.6, green: 0.6, blue: 1 },
+TotemRegistry.register("geo:golem_totem", {
+    soundId: "random.anvil_land",
+    color: { red: 1, green: 1, blue: 1 },
   /**
    * @param {TotemContext} ctx
    */
   onActivate(ctx) {
     const { player, damageSource, damage, slot } = ctx;
 
-
-
     player.addEffect("regeneration", 900, { amplifier: 1 });
     player.addEffect("absorption", 100, { amplifier: 1 });
-    player.addEffect("slow_falling", 800, { amplifier: 0 });
-    
-    let playerSpawn = player.getSpawnPoint();
-    let spawnLocation = { x: playerSpawn?.x ?? 0, y: playerSpawn?.y ?? 240, z: playerSpawn?.z ?? 0 };
+    player.addEffect("resistance", 80, { amplifier: 3 });
+    player.addEffect("slowness", 80, { amplifier: 4 });
 
-    player.teleport(spawnLocation, {dimension: playerSpawn?.dimension ?? world.getDimension("minecraft:overworld") });
-    player.playSound("random.orb", { volume: 100, pitch: 1 });
-  },
+    player.dimension.spawnEntity("minecraft:iron_golem", player.location);
+    },
 });

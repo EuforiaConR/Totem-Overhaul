@@ -5,8 +5,11 @@
 		"eu_custom_totem": {
 			"textures": "textures/item/custom_totem"
 		},
-				"geo_recall_totem": {
+		"geo_recall_totem": {
 			"textures": "textures/item/recall_totem"
+		},
+		"geo_golem_totem": {
+			"textures": "textures/item/golem_totem"
 		}
 	}
 }
