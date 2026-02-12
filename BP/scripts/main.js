@@ -83,8 +83,11 @@ world.beforeEvents.entityHurt.subscribe(ev => {
         if (totem.onActivate) {
             totem.onActivate(ctx);
         }
-        hurtEntity.playSound(totem.soundId ?? DEFAULT_SOUND_ID);
-        hurtEntity.spawnParticle(totem.particleId ?? DEFAULT_PARTICLE_ID, hurtEntity.getHeadLocation());
+        system.run(() => {
+            hurtEntity.playSound(totem.soundId ?? DEFAULT_SOUND_ID);
+            hurtEntity.spawnParticle(totem.particleId ?? DEFAULT_PARTICLE_ID, hurtEntity.getHeadLocation());
+
+        })
 
     });
 });
