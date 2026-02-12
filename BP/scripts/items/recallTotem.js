@@ -9,17 +9,25 @@ import { Player, EntityDamageSource, world } from "@minecraft/server";
  * @property {string} slot
  */
 
-TotemRegistry.register("eu:custom_totem", {
-
+TotemRegistry.register("geo:recall_totem", {
+    soundId: "null",
   /**
    * @param {TotemContext} ctx
    */
   onActivate(ctx) {
     const { player, damageSource, damage, slot } = ctx;
 
+
+
     player.addEffect("regeneration", 900, { amplifier: 1 });
     player.addEffect("absorption", 100, { amplifier: 1 });
     player.addEffect("fire_resistance", 800, { amplifier: 0 });
+    player.addEffect("slow_falling", 800, { amplifier: 0 });
+    
+    let playerSpawn = player.getSpawnPoint();
+    let spawnLocation = { x: playerSpawn?.x ?? 0, y: playerSpawn?.y ?? 240, z: playerSpawn?.z ?? 0 };
 
+    player.teleport(spawnLocation, {dimension: playerSpawn?.dimension ?? world.getDimension("minecraft:overworld") });
+    player.playSound("random.orb", { volume: 100, pitch: 1 });
   },
 });
