@@ -1,6 +1,3 @@
-import { TotemRegistry } from "../totemRegistry.js";
-import { Player, EntityDamageSource, world } from "@minecraft/server";
-
 /**
  * @typedef {Object} TotemContext
  * @property {Player} player
@@ -9,7 +6,7 @@ import { Player, EntityDamageSource, world } from "@minecraft/server";
  * @property {string} slot
  */
 
-TotemRegistry.register("eu:custom_totem", {
+TotemRegistry.register("eu:recall_totem", {
 
   /**
    * @param {TotemContext} ctx

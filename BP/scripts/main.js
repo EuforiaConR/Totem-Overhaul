@@ -18,7 +18,6 @@ function consumeItem(player, slot, amount = 1) {
 
 const DEFAULT_IGNORED_CAUSES = [
     "void",
-    "out_of_world",
     "selfDestruct"
 ];
 const DEFAULT_SOUND_ID = "random.totem"
