@@ -4,6 +4,9 @@
 	"texture_data": {
 		"eu_custom_totem": {
 			"textures": "textures/item/custom_totem"
+		},
+				"geo_recall_totem": {
+			"textures": "textures/item/recall_totem"
 		}
 	}
 }
