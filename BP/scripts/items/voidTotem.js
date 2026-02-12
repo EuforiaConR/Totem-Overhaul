@@ -11,6 +11,8 @@ import { Player, EntityDamageSource, world, system } from "@minecraft/server";
 
 TotemRegistry.register("totem_overhaul:void_totem", {
   ignoredCauses: ["selfDestruct"],
+  color: { red: 1, green: 0.1, blue: 1 },
+
   /**
    * @param {TotemContext} ctx
    */
@@ -20,6 +22,9 @@ TotemRegistry.register("totem_overhaul:void_totem", {
     if (damageSource.cause === "void") {
       player.runCommand("spreadplayers ~ ~ 5 100 @s");
     }
+    player.addEffect("regeneration", 900, { amplifier: 1 });
+    player.addEffect("absorption", 100, { amplifier: 1 });
+    player.addEffect("levitation", 100, { amplifier: 1 });
 
   },
 });
