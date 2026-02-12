@@ -1,0 +1,16 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:item": {
+    "description": {
+      "identifier": "totem_overhaul:void_totem",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:icon": "eu_custom_totem",
+      "minecraft:allow_off_hand": true,
+      "minecraft:max_stack_size": 1
+    }
+  }
+}
