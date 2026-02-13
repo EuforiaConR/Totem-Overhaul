@@ -1,4 +1,10 @@
-import { world, system, EntityDamageCause, EntityComponentTypes } from "@minecraft/server";
+import {
+  world,
+  system,
+  EntityDamageCause,
+  EntityComponentTypes,
+  MolangVariableMap,
+} from "@minecraft/server";
 import { TotemRegistry } from "./totemRegistry.js";
 import "./items/index.js";
 
@@ -18,7 +24,7 @@ function consumeItem(player, slot, amount = 1) {
 
 const DEFAULT_IGNORED_CAUSES = ["void", "selfDestruct"];
 const DEFAULT_SOUND_ID = "random.totem";
-const DEFAULT_PARTICLE_ID = "minecraft:totem_particle";
+const DEFAULT_PARTICLE_ID = "geo:totem_pop";
 
 world.beforeEvents.entityHurt.subscribe((ev) => {
   const { hurtEntity, damageSource, damage } = ev;
@@ -83,10 +89,15 @@ world.beforeEvents.entityHurt.subscribe((ev) => {
       totem.onActivate(ctx);
     }
     system.run(() => {
+      let ParticleVariableMap = new MolangVariableMap();
+      ParticleVariableMap.setFloat("variable.red", totem.color?.red ?? 1);
+      ParticleVariableMap.setFloat("variable.green", totem.color?.green ?? 1);
+      ParticleVariableMap.setFloat("variable.blue", totem.color?.blue ?? 0);
       hurtEntity.playSound(totem.soundId ?? DEFAULT_SOUND_ID);
       hurtEntity.spawnParticle(
         totem.particleId ?? DEFAULT_PARTICLE_ID,
         hurtEntity.getHeadLocation(),
+        totem.particleId ? undefined : ParticleVariableMap,
       );
     });
   });

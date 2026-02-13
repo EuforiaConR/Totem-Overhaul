@@ -11,6 +11,7 @@ import { Player, EntityDamageSource, world } from "@minecraft/server";
 
 TotemRegistry.register("geo:recall_totem", {
     soundId: "null",
+    color: { red: 0.6, green: 0.6, blue: 1 },
   /**
    * @param {TotemContext} ctx
    */
@@ -21,7 +22,6 @@ TotemRegistry.register("geo:recall_totem", {
 
     player.addEffect("regeneration", 900, { amplifier: 1 });
     player.addEffect("absorption", 100, { amplifier: 1 });
-    player.addEffect("fire_resistance", 800, { amplifier: 0 });
     player.addEffect("slow_falling", 800, { amplifier: 0 });
     
     let playerSpawn = player.getSpawnPoint();
