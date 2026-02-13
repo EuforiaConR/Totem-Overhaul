@@ -14,6 +14,9 @@
 		"eu_ender_totem": {
 			"textures": "textures/item/totem_overhaul/ender_totem"
 		},
+		"eu_creeper_totem": {
+			"textures": "textures/item/totem_overhaul/creeper_totem"
+		},
 		"eu_evoker_totem": {
 			"textures": "textures/item/totem_overhaul/evoker_totem"
 		},

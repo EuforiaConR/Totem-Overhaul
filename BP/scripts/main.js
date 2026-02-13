@@ -25,11 +25,21 @@ function consumeItem(player, slot, amount = 1) {
 const DEFAULT_IGNORED_CAUSES = ["void", "selfDestruct"];
 const DEFAULT_SOUND_ID = "random.totem";
 const DEFAULT_PARTICLE_ID = "geo:totem_pop";
+const DEFAULT_INVULNERABILITY_TICKS = 0;
+
+const invulnUntil = new Map();
 
 world.beforeEvents.entityHurt.subscribe((ev) => {
   const { hurtEntity, damageSource, damage } = ev;
 
   if (hurtEntity.typeId !== "minecraft:player") return;
+
+  //invulnerabilidad temporal
+  const until = invulnUntil.get(hurtEntity.id);
+  if (until && system.currentTick < until && !DEFAULT_IGNORED_CAUSES.includes(damageSource.cause)) {
+    ev.cancel = true;
+    return;
+  }
 
   const health = hurtEntity.getComponent("health");
 
@@ -88,6 +98,11 @@ world.beforeEvents.entityHurt.subscribe((ev) => {
     if (totem.onActivate) {
       totem.onActivate(ctx);
     }
+
+    //invulnerabilidad temporal
+    const invulnerabilityTicks = totem.invulnerabilityTicks ?? DEFAULT_INVULNERABILITY_TICKS;
+    invulnUntil.set(hurtEntity.id, system.currentTick + invulnerabilityTicks);
+
     system.run(() => {
       let ParticleVariableMap = new MolangVariableMap();
       ParticleVariableMap.setFloat("variable.red", totem.color?.red ?? 1);
