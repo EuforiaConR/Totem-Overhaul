@@ -10,8 +10,8 @@ import { Player, EntityDamageSource, world } from "@minecraft/server";
  */
 
 TotemRegistry.register("geo:golem_totem", {
-    soundId: "random.anvil_land",
-    color: { red: 1, green: 1, blue: 1 },
+  soundId: "random.anvil_land",
+  color: { red: 1, green: 1, blue: 1 },
   /**
    * @param {TotemContext} ctx
    */
@@ -23,7 +23,9 @@ TotemRegistry.register("geo:golem_totem", {
     player.addEffect("resistance", 80, { amplifier: 3 });
     player.addEffect("slowness", 80, { amplifier: 4 });
 
-    let golem = player.dimension.spawnEntity("minecraft:iron_golem", player.location)
-    golem.triggerEvent("minecraft:from_player");
+    player.dimension.spawnEntity("minecraft:iron_golem", player.location, {
+      spawnEvent: "minecraft:from_player",
+    });
+    //golem.triggerEvent("minecraft:from_player");
   },
 });
