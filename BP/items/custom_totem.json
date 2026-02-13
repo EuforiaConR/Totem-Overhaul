@@ -4,7 +4,8 @@
     "description": {
       "identifier": "eu:custom_totem",
       "menu_category": {
-        "category": "items"
+        "category": "equipment",
+        "group": "totem_overhaul:itemGroup.name.totem_overhaul"
       }
     },
     "components": {

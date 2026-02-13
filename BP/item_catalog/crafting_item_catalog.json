@@ -1,0 +1,20 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                // Valid values are construction, equipment, nature, and items
+                "category_name": "equipment",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "totem_overhaul:void_totem",
+                            "name": "totem_overhaul:itemGroup.name.totem_overhaul"
+                        },
+                        "items": []
+                    }
+                ]
+            }
+        ]
+    }
+}

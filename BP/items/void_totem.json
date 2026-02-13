@@ -4,7 +4,8 @@
     "description": {
       "identifier": "totem_overhaul:void_totem",
       "menu_category": {
-        "category": "items"
+        "category": "equipment",
+        "group": "totem_overhaul:itemGroup.name.totem_overhaul"
       }
     },
     "components": {
