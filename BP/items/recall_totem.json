@@ -11,6 +11,7 @@
       "minecraft:icon": "geo_recall_totem",
       "minecraft:allow_off_hand": true,
       "minecraft:max_stack_size": 1,
+      "minecraft:hover_text_color": "yellow",
       "minecraft:tags": {
         "tags": [
           "totem_overhaul:is_totem"

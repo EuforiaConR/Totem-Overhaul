@@ -3,13 +3,25 @@
 	"texture_name": "atlas.items",
 	"texture_data": {
 		"eu_custom_totem": {
-			"textures": "textures/item/custom_totem"
+			"textures": "textures/item/totem_overhaul/custom_totem"
+		},
+		"eu_breeze_totem": {
+			"textures": "textures/item/totem_overhaul/breeze_totem"
+		},
+		"eu_void_totem": {
+			"textures": "textures/item/totem_overhaul/void_totem"
+		},
+		"eu_ender_totem": {
+			"textures": "textures/item/totem_overhaul/ender_totem"
+		},
+		"eu_evoker_totem": {
+			"textures": "textures/item/totem_overhaul/evoker_totem"
 		},
 		"geo_recall_totem": {
-			"textures": "textures/item/recall_totem"
+			"textures": "textures/item/totem_overhaul/recall_totem"
 		},
 		"geo_golem_totem": {
-			"textures": "textures/item/golem_totem"
+			"textures": "textures/item/totem_overhaul/iron_golem_totem"
 		}
 	}
 }
