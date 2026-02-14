@@ -1,1 +1,43 @@
-{}
+{
+    "entity_sounds": {
+        "entities": {
+            "totem_overhaul:summoned_bee": {
+                "events": {
+                    "ambient.pollinate": {
+                        "sound": "mob.bee.pollinate",
+                        "volume": 0.850
+                    },
+                    "attack": {
+                        "pitch": [
+                            0.80,
+                            1.0
+                        ],
+                        "sound": "mob.bee.sting"
+                    },
+                    "death": {
+                        "pitch": [
+                            0.90,
+                            1.10
+                        ],
+                        "sound": "mob.bee.death",
+                        "volume": 0.60
+                    },
+                    "eat": "",
+                    "hurt": {
+                        "pitch": [
+                            0.90,
+                            1.10
+                        ],
+                        "sound": "mob.bee.hurt",
+                        "volume": 0.60
+                    }
+                },
+                "pitch": 1.0,
+                "variants": {
+                    "key": null
+                },
+                "volume": 0.60
+            }
+        }
+    }
+}
