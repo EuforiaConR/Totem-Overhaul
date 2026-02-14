@@ -7,3 +7,4 @@ import "./recallTotem.js";
 import "./enderTotem.js";
 import "./evokerTotem.js";
 import "./creeperTotem.js";
+import "./beeTotem.js";

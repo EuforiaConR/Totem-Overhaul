@@ -20,6 +20,9 @@
 		"eu_evoker_totem": {
 			"textures": "textures/item/totem_overhaul/evoker_totem"
 		},
+		"eu_bee_totem": {
+			"textures": "textures/item/totem_overhaul/bee_totem"
+		},
 		"geo_recall_totem": {
 			"textures": "textures/item/totem_overhaul/recall_totem"
 		},

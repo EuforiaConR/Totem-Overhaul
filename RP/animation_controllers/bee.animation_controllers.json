@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.totem_overhaul.summoned_bee.sting": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "bee_sting"
+          ]
+        }
+      }
+    },
+    "controller.animation.totem_overhaul.summoned_bee.root": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            "flying",
+            "bee_fly_bobbing",
+            "controller_bee_sting"
+          ]
+        }
+      }
+    }
+  }
+}

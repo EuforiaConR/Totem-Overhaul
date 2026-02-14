@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "totem_overhaul:summoned_bee",
+      "materials": {
+        "default": "bee"
+      },
+      "textures": {
+        "default": "textures/entity/bee/bee_angry"
+      },
+      "geometry": {
+        "default": "geometry.bee"
+      },
+      "animations": {
+        "flying": "animation.bee.flying",
+        "controller_bee_sting": "controller.animation.totem_overhaul.summoned_bee.sting",
+        "bee_sting": "animation.bee.sting",
+        "bee_fly_bobbing": "animation.bee.fly.bobbing",
+        "bee_root_controller": "controller.animation.totem_overhaul.summoned_bee.root"
+      },
+      "scripts": {
+        "animate": [
+          "bee_root_controller"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_bee"
+      }
+    }
+  }
+}
