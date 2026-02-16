@@ -1,4 +1,4 @@
-import { TotemRegistry } from "../totemRegistry.js";
+import { TotemRegistry } from "../../totemRegistry.js";
 import { Player, EntityDamageSource, world, system } from "@minecraft/server";
 
 /**
@@ -9,9 +9,8 @@ import { Player, EntityDamageSource, world, system } from "@minecraft/server";
  * @property {string} slot
  */
 
-TotemRegistry.register("totem_overhaul:void_totem", {
-  ignoredCauses: ["selfDestruct"],
-  color: { red: 1, green: 0.1, blue: 1 },
+TotemRegistry.register("totem_overhaul:ender_totem", {
+  color: { red: 0, green: 0.9, blue: 0.1 },
 
   /**
    * @param {TotemContext} ctx
@@ -19,12 +18,9 @@ TotemRegistry.register("totem_overhaul:void_totem", {
   onActivate(ctx) {
     const { player, damageSource, damage, slot } = ctx;
 
-    if (damageSource.cause === "void") {
-      player.runCommand("spreadplayers ~ ~ 5 100 @s");
-    }
+    player.runCommand("spreadplayers ~ ~ 5 25 @s");
+
     player.addEffect("regeneration", 900, { amplifier: 1 });
     player.addEffect("absorption", 100, { amplifier: 1 });
-    player.addEffect("levitation", 100, { amplifier: 1 });
-
   },
 });
