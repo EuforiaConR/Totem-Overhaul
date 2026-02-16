@@ -6,6 +6,8 @@ import "./normal/evokerTotem.js";
 import "./normal/recallTotem.js";
 import "./normal/voidTotem.js";
 import "./normal/customTotem.js";
+import "./normal/blazeTotem.js";
+import "./normal/frostTotem.js";
 
 /// summoner totems
 import "./summoner/golemTotem.js";
