@@ -1,5 +1,5 @@
-import { TotemRegistry } from "../totemRegistry.js";
-import { Player, EntityDamageSource, world, system } from "@minecraft/server";
+import { TotemRegistry } from "../../totemRegistry.js";
+import { Player, EntityDamageSource, world } from "@minecraft/server";
 
 /**
  * @typedef {Object} TotemContext
@@ -9,18 +9,16 @@ import { Player, EntityDamageSource, world, system } from "@minecraft/server";
  * @property {string} slot
  */
 
-TotemRegistry.register("totem_overhaul:ender_totem", {
-  color: { red: 0, green: 0.9, blue: 0.1 },
-
+TotemRegistry.register("totem_overhaul:custom_totem", {
+  color: { red: 0, green: 1, blue: 0 },
   /**
    * @param {TotemContext} ctx
    */
   onActivate(ctx) {
     const { player, damageSource, damage, slot } = ctx;
 
-    player.runCommand("spreadplayers ~ ~ 5 25 @s");
-
     player.addEffect("regeneration", 900, { amplifier: 1 });
     player.addEffect("absorption", 100, { amplifier: 1 });
+    player.addEffect("fire_resistance", 900, { amplifier: 0 });
   },
 });

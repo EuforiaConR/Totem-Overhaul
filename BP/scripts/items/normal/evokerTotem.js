@@ -1,4 +1,4 @@
-import { TotemRegistry } from "../totemRegistry.js";
+import { TotemRegistry } from "../../totemRegistry.js";
 import { Player, EntityDamageSource, world } from "@minecraft/server";
 
 /**
