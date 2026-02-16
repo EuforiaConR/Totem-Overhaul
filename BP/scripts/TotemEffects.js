@@ -23,22 +23,14 @@ system.runInterval(() => {
         let offHandItemId = getOffhandItem(player)?.typeId;
         let mainHandItemId = getMainhandItem(player)?.typeId;
 
-        for (const [typeId, data] of TotemEffectRegistry.totems.entries()) {
+        TotemEffectRegistry.get(offHandItemId)?.effects?.offhand.forEach(effect => {
+            player.addEffect(effect.id, 200, { amplifier: effect.amplifier });
+        })
 
-            if (data.effects.offhand && offHandItemId === typeId) {
-                for (const effect of data.effects.offhand) {
-                    player.addEffect(effect.id, 200, { amplifier: effect.amplifier });
-                }
-            }
+        if (offHandItemId === mainHandItemId) return;
 
-            if (offHandItemId === mainHandItemId) return;
-
-            if (data.effects.mainhand && mainHandItemId === typeId) {
-                for (const effect of data.effects.mainhand) {
-                    player.addEffect(effect.id, 200, { amplifier: effect.amplifier });
-                }
-            }
-
-        }
+        TotemEffectRegistry.get(mainHandItemId)?.effects?.mainhand.forEach(effect => {
+            player.addEffect(effect.id, 200, { amplifier: effect.amplifier });
+        })
     }
 }, 100);
