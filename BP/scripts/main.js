@@ -6,6 +6,7 @@ import {
   MolangVariableMap,
 } from "@minecraft/server";
 import { TotemRegistry } from "./totemRegistry.js";
+import { TotemEffectRegistry } from "./TotemEffects.js";
 import "./items/!index.js";
 
 function consumeItem(player, slot, amount = 1) {
