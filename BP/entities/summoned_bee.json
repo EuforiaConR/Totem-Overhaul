@@ -18,25 +18,14 @@
         }
       },
       "angry_bee": {
-        "minecraft:angry": {
-          "duration": 25
-        },
         "minecraft:behavior.melee_attack": {
           "priority": 2,
-          "attack_once": true,
-          "speed_multiplier": 1.4,
-          "on_attack": {
-            "event": "reset_angry",
-            "target": "self"
-          }
+          "attack_once": false,
+          "speed_multiplier": 1.4
         }
       },
       "bee_tamed": {
         "minecraft:is_tamed": {},
-        "minecraft:on_target_acquired": {
-          "event": "attacked",
-          "target": "self"
-        },
         "minecraft:attack": {
           "damage": 4,
           "effect_name": "poison",
@@ -223,7 +212,8 @@
       "minecraft:on_tame": {
         "add": {
           "component_groups": [
-            "bee_tamed"
+            "bee_tamed",
+            "angry_bee"
           ]
         },
         "remove": {
@@ -231,24 +221,6 @@
             "bee_wild"
           ]
         }
-      },
-      "reset_angry": {
-        "remove": {
-          "component_groups": [
-            "angry_bee"
-          ]
-        }
-      },
-      "attacked": {
-        "sequence": [
-          {
-            "add": {
-              "component_groups": [
-                "angry_bee"
-              ]
-            }
-          }
-        ]
       }
     }
   }
