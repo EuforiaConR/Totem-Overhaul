@@ -28,6 +28,12 @@
 		},
 		"geo_golem_totem": {
 			"textures": "textures/item/totem_overhaul/iron_golem_totem"
+		},
+		"swiftness_totem": {
+			"textures": "textures/item/totem_overhaul/swiftness_totem"
+		},
+		"turtle_totem": {
+			"textures": "textures/item/totem_overhaul/turtle_totem"
 		}
 	}
 }
