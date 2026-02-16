@@ -34,6 +34,12 @@
 		},
 		"turtle_totem": {
 			"textures": "textures/item/totem_overhaul/turtle_totem"
+		},
+		"blaze_totem": {
+			"textures": "textures/item/totem_overhaul/blaze_totem"
+		},
+		"frost_totem": {
+			"textures": "textures/item/totem_overhaul/frost_totem"
 		}
 	}
 }
