@@ -16,3 +16,4 @@ import "./summoner/beeTotem.js";
 /// talisman totems
 import "./talisman/swiftnessTotem.js";
 import "./talisman/turtleTotem.js";
+import "./talisman/ravagerTotem.js";
